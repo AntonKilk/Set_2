@@ -5,11 +5,11 @@ Write a function double to duplicate each element in array in the sense of
 */
 
 function double(xs) {
-    xs.flatMap( x => [x,x]); //TypeError: xs.flatMap is not a function
+    return xs.flatMap( x => [x,x]); 
   }
   
-  double([])     // []
-  double([1])    // [1, 1]
+  double([])   // []
+  double([1])  // [1, 1]
   double([1, 2]) // [1, 1, 2, 2]
   // let double = (xs) => {
   //   return xs

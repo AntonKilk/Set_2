@@ -7,3 +7,17 @@ Given a year, report if it is a leap year.
     unless the year is also evenly divisible by 400
 For example, 1997 is not a leap year, but 1996 is. 1900 is not a leap year, but 2000 is.
  */
+
+ function leapYear (year){
+     if (year %4 == 0){
+        if (year %100 == 0){
+            if (year %400 == 0){
+                return "This year is a leap year!";
+            }
+            return "This year is a not a leap year!";
+        }
+        return "This year is a leap year!";
+     } else return "This year is a not a leap year!";
+ }
+
+ 
