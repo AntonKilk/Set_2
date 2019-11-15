@@ -14,4 +14,4 @@ if (y == undefined) {
   
  console.log(add(1, 2) )   // 3
  console.log (add(1)(2))   // 3
- console.log (add()(1, 2)) // 3
+ console.log (add()(1, 2)) // 3 // how to solve this?

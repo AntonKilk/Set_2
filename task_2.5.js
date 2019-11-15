@@ -19,7 +19,7 @@ This way data to be encoded will never contain any numbers and
  numbers inside data to be decoded always represent the count for the following character.
 */
 
-let str = "WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB";
+let str = "AABCCCDEEEE";
 
 function encode (string) {
     let output = "";
@@ -45,11 +45,20 @@ function encode (string) {
 
 let code = encode(str);
 
-arr = code.split(/([0-9]+)/);
-let decoded = "";
-for (let i = 0, i< arr.length; i++){
-    if (typeof arr[i] == "number"){
-        decode +=arr[i+1];
+function decode (code){
+    let decoded = "";
+    arr = code.split(/([A-Z])/);
+    for (let i = 0; i < arr.length; i ++){
+        if (isNaN(arr[i]) == true){
+            decoded += arr[i];
+            if (isNaN(arr[i-1]) == false){
+               let num = parseInt(arr[i-1]);
+               decoded += arr[i].repeat(num-1); 
+            }
+        }
     }
+    return decoded;
 }
+
+console.log(decode(code));
 
