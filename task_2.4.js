@@ -8,16 +8,20 @@ Given a year, report if it is a leap year.
 For example, 1997 is not a leap year, but 1996 is. 1900 is not a leap year, but 2000 is.
  */
 
- function leapYear (year){
+ function isLeapYear (year){
      if (year %4 == 0){
         if (year %100 == 0){
             if (year %400 == 0){
-                return "This year is a leap year!";
+                return true;
             }
-            return "This year is a not a leap year!";
+            return false;
         }
-        return "This year is a leap year!";
-     } else return "This year is a not a leap year!";
+        return true;
+     } else return false;
  }
+ console.log(isLeapYear(1900));
+ console.log(isLeapYear(1997));
+ console.log(isLeapYear(1996));
+ console.log(isLeapYear(2000));
 
  

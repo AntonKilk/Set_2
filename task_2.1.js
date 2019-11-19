@@ -33,3 +33,5 @@ function encrypt(str) {
   encrypt("abz", 3) // "dec"
   decrypt("dec", 3) // "abz"
   decrypt(encrypt("foobar")) == "foobar" // true
+
+  // vyrazit decript cherez encript

@@ -22,7 +22,7 @@ This way data to be encoded will never contain any numbers and
 let str = "AABCCCDEEEE";
 
 function encode (string) {
-    let output = "";
+    let encoded = "";
     let count = 1;
     for (let i = 0; i < string.length; i++){
         if (string[i+1] == string[i]){
@@ -30,24 +30,23 @@ function encode (string) {
         } 
         else {
             if (count == 1){
-                output += string[i];
+                encoded += string[i];
             } else {
-                output += count;
+                encoded += count;
                 count = 1;
-                output += string[i];
+                encoded += string[i];
             }
         }  
     }
-    return output;
+    return encoded;
 }       
 
 // decoding
 
-let code = encode(str);
 
-function decode (code){
+function decode (string){
     let decoded = "";
-    arr = code.split(/([A-Z])/);
+    arr = string.split(/([A-Z])/);
     for (let i = 0; i < arr.length; i ++){
         if (isNaN(arr[i]) == true){
             decoded += arr[i];
@@ -60,5 +59,7 @@ function decode (code){
     return decoded;
 }
 
-console.log(decode(code));
+var encoded = encode(str);
+console.log(encoded)
+console.log(decode(encoded));
 
